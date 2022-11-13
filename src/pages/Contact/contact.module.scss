@@ -1,0 +1,112 @@
+@import '../../ui/colors';
+@import '../../ui/values';
+
+.contact {
+  min-height: 100vh;
+  padding: calc(#{$navbarheight} + 2rem) 2rem 2rem 2rem;
+  background-color: $lightbackground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    max-width: 1080px;
+    margin: 20px auto;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 0.8);
+
+    .form {
+      display: flex;
+      flex-direction: column;
+
+      .contactOpen {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #000000b0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input,
+        textarea {
+          border: none;
+          outline: none;
+          margin: 0.7rem 0;
+          border-radius: 5px;
+          box-shadow: 0 2px 8px 0 rgba(128, 128, 128, 0.3);
+          font-size: 1.2rem;
+          padding: 0.8rem;
+          background-color: #eff3f5;
+          font-family: 'Josefin Sans';
+          font-weight: 500;
+          color: $lightblack;
+        }
+
+        textarea {
+          resize: none;
+          padding: 1rem 0.8rem;
+        }
+
+        button {
+          margin-top: 1rem;
+          padding: 0.8rem 0.5rem 0.5rem;
+          outline: none;
+          border: none;
+          border-radius: 5px;
+          background-color: #3c83f3;
+          font-size: 1.5rem;
+          font-weight: 500;
+          font-family: 'Josefin Sans', sans-serif;
+          color: #fff;
+          text-align: center;
+          cursor: pointer;
+          box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 0.4);
+        }
+      }
+    }
+
+    .lottie {
+      height: 380px;
+      width: 380px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .contact {
+    .wrapper {
+      flex-direction: column-reverse;
+      width: 85vw;
+      padding: 2rem;
+
+      .form {
+        width: 80%;
+      }
+
+      .lottie {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contact {
+    .wrapper {
+      padding: 1.2rem;
+
+      .form {
+        width: 100%;
+      }
+    }
+  }
+}

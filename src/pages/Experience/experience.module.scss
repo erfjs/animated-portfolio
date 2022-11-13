@@ -1,0 +1,109 @@
+@import '../../ui/colors';
+@import '../../ui/values';
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@include keyframes(slide-left) {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.education {
+  position: absolute;
+  left: 0;
+  min-height: calc(100vh - #{$navbarheight});
+  width: 100%;
+  margin-top: $navbarheight;
+  padding: 1rem 0;
+  background-color: $lightbackground;
+  // @include animation('slide-left 0.8s 1');
+
+  .wrapper {
+    max-width: 1080px;
+    margin: 20px auto;
+    padding: 0 20px;
+    position: relative;
+
+    .eduOpen {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .eduClose {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .center_line {
+      position: absolute;
+      height: 75%;
+      width: 4px;
+      background: $primarylight;
+      left: 50%;
+      top: 60px;
+      border-radius: 2px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .wrapper {
+    .center_line {
+      left: 40px !important;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .wrapper {
+    .center_line {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@import '../../ui/fonts';
+@import '../../ui/colors';
+@import '../../ui/values';
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@include keyframes(rotate-icon1) {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(rotate-icon2) {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.home {
+  min-height: 100vh;
+  padding: calc(#{$navbarheight} + 2rem) 2rem 2rem 2rem;
+  background-color: $lightbackground;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 4px solid $primarylight;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .title {
+    margin: 2.5rem 0 1.5rem 0;
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .about {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #3f3f3f;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .about_next {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #3f3f3fe0;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      font-size: 1.8rem;
+
+      & svg {
+        transition: all 1.2s ease;
+      }
+
+      &:hover svg {
+        transform: rotateY(1turn);
+      }
+
+      /*
+      &:hover:nth-child(odd) {
+        @include animation("rotate-icon1 1s 1");
+      }
+
+      &:hover:nth-child(even) {
+        @include animation("rotate-icon2 1s 1");
+      }
+      */
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    .image {
+      height: 8rem;
+      width: 8rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .about {
+      font-size: 1.45rem;
+    }
+    .about_next {
+      font-size: 1.3rem;
+    }
+  }
+}
