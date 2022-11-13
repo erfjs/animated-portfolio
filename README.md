@@ -4,7 +4,7 @@
 
 ## 📷 Screenshot
 <p align="center">
-  <a src="https://animated-portfolio.erfjs.com" target="_blank"><img src="./assets/example.png" width="800" height="auto" /></a>
+  <a src="https://animated-portfolio.erfjs.com" target="_blank"><img src="./src/assets/example.png" width="800" height="auto" /></a>
 </p>
 
 ## 📋 Project description
