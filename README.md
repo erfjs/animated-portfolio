@@ -8,7 +8,7 @@
 </p>
 
 ## 📋 Project description
-React Animated Portfolio Website Built 
+React Animated Portfolio Website 
 
 
 ## 💻 Technologies used
