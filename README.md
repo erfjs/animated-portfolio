@@ -16,6 +16,7 @@
 ## 📋 Project description
 React Animated Portfolio Website 
 
+--------------
   
 ## 💻 Technologies used
 - React v18.2
